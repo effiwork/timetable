@@ -1,5 +1,5 @@
 ﻿import { Data } from "../types/data";
-import { validateDateAtWeek } from "./validateDate";
+import { validateDateAtWeek } from "../dataFlow/validateDate";
 
 export default function generateData() :Data{
     return {

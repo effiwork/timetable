@@ -1,6 +1,6 @@
 ﻿import { Data } from "../types/data";
-import verifyData from "./verifyData";
+import validateData from "./validateData";
 
 export default function decodeParam(input :string) :Data{
-    return verifyData(window.atob(input));
+    return validateData(window.atob(input));
 }

@@ -11,6 +11,9 @@ type Props = Immutable<{
 }>;
 /**@once*/
 export default class WeekSwitch extends Cp<Props>{
+    private clickCB = ()=>{
+        
+    }
     render() :React.ReactNode{
         const buttonStyle :React.CSSProperties = {
             cursor: "pointer",
@@ -30,11 +33,10 @@ export default class WeekSwitch extends Cp<Props>{
                 <div style={{
                     margin: "0 2rem"
                 }}>
-                
                     <div style={{
                         cursor: "pointer",
                         padding: "0 2rem"
-                    }} title="跳转">第 {this.props.currentWeek} 周</div>
+                    }} title="跳转" onClick={this.clickCB}>第 {this.props.currentWeek} 周</div>
                 </div>
                 <div style={buttonStyle} title="前进一周">→</div>
             </div>

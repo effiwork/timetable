@@ -1,8 +1,8 @@
-﻿import { LessonImportance } from "../data/data";
+﻿import { LessonImportance } from "../dataSource/enums";
 import { TimeBlock } from "./data";
-import { LessonLocation } from "../data/data";
-import { LessonSubject } from "../data/data";
-import { LessonImportance } from "../data/data";
+import { LessonLocation } from "../dataSource/enums";
+import { LessonSubject } from "../dataSource/enums";
+import { LessonImportance } from "../dataSource/enums";
 
 /****这个数组的长度与 `Data.lessonTemplates.morning.length + Data.lessonTemplates.afternoon.length + Data.lessonTemplates.night.length` 一样。***/
 type LessonsInADay = Lesson[];

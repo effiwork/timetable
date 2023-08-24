@@ -2,27 +2,33 @@
 import { Data } from "./types/data";
 import Day from "./Day/Day";
 import Timeline from "./Timeline/Timeline";
-import { Weekday } from "./data/data";
+import { Weekday } from "./dataSource/enums";
 import WeekSwitch from "./WeekSwitch/WeekSwitch";
-import { updateData } from "./dataProcess/getData";
-import { Immutable, produce } from "immer";
+import { updateData } from "./dataFlow/getData";
+import { produce } from "immer";
 
-type Props = Immutable<{
+type Props = {
     data :Data;
     updateData :(newData :Data)=>void;
-}>;
+};
 /**@once*/
 export default class Timetable extends Cp<Props>{
-    incrementWeek = ()=>{
+    private incrementWeek = ()=>{
         updateData(produce(this.props.data, draft=>{
-            
+            draft.ini_state.currentWeek++;
         }));
     }
-    decrementWeek = ()=>{
-
+    private decrementWeek = ()=>{
+        updateData(produce(this.props.data, draft=>{
+            draft.ini_state.currentWeek--;
+        }));
     }
-    setWeek = (week :number)=>{
-
+    private setWeek = (week :number)=>{
+        updateData(produce(this.props.data, draft=>{
+            if(week > draft.config.weeksInTerm) draft.ini_state.currentWeek = draft.config.weeksInTerm;
+            else if(week < 1) draft.ini_state.currentWeek = 1;
+            else draft.ini_state.currentWeek = week;
+        }));
     }
     render() :React.ReactNode{
         return(<>

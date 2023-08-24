@@ -5,7 +5,7 @@ import "./css/main.scrollbar.css";
 import "./css/main.varibles.css";
 import "./css/main.basicElements.css";
 import Timetable from "./Timetable";
-import { getData, updateData } from "./dataProcess/getData";
+import { getData, updateData } from "./dataFlow/getData";
 import { Data } from "./types/data";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);

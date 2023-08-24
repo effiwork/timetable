@@ -1,7 +1,7 @@
 ﻿import { Data } from "../types/data";
-import verifyData from "./verifyData";
+import validateData from "./validateData";
 
 export function getDataFromLocalStorage() :Data{
     const lsData = localStorage.getItem("data");
-    return verifyData(lsData);
+    return validateData(lsData);
 }
