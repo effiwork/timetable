@@ -33,14 +33,10 @@ body{
     color: var(--c-base);
 }
 #root{
+    display: block;
     height: 100vh;/*兼容*/
     height: 100dvh;
     width: 100vw;/*兼容*/
     width: 100dvw;
-    overflow-x: hidden;
-    overflow-y: auto;/*兼容*/
-    overflow-y: overlay;
-    overflow-y: hidden;
-    display: flex;
-    flex-flow: column nowrap;
+    overflow: clip;
 }

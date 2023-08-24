@@ -5,11 +5,11 @@ import "./css/main.scrollbar.css";
 import "./css/main.varibles.css";
 import "./css/main.basicElements.css";
 import Timetable from "./Timetable";
-import { decodeParam } from "./data/processParam";
+import { getData, updateData } from "./dataProcess/getData";
+import { Data } from "./types/data";
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
-root.render(<React.StrictMode><Timetable /></React.StrictMode>);
-if(window.location.search){
-    const expectedParam = window.location.search.substring(1).split("&").find((value :string)=>value && value.split("=")[0] === "d");
-    if(expectedParam) decodeParam(expectedParam);
+const root = ReactDOM.createRoot(document.getElementById("root")!);
+export function reload(){
+    root.render(<React.StrictMode><Timetable data={getData()} updateData={updateData} /></React.StrictMode>);
 }
+reload();

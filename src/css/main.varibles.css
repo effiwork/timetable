@@ -1,4 +1,4 @@
-﻿:root, ::before, ::after{
+﻿:root{
     --c-base: mintcream;
     --c-taskbar: beige;
     --c-menu: honeydew;
@@ -23,6 +23,8 @@
     --c-black-tra-3: #2423224A;
     --c-black-tra-4: #24232259;
     --c-black-tra-5: #2423226E;
+    --c-black-tra-6: #2423228E;
+    --c-black-tra-7: #242322A5;
     --c-1: #CEF6E3;
     --c-2: #17F18B;
     --c-3: #FFE8CF;
