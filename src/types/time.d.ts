@@ -1,4 +1,6 @@
-﻿interface TimeBlock{
+﻿//important:记得更新schema.ts
+
+interface TimeBlock{
     startTime :Time;
     endTime :Time;
 }

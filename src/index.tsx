@@ -9,7 +9,8 @@ import { getData, updateData } from "./dataFlow/getData";
 import { Data } from "./types/data";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
-export function reload(){
-    root.render(<React.StrictMode><Timetable data={getData()} updateData={updateData} /></React.StrictMode>);
+(window as any).reload = reload;
+export async function reload(){
+    root.render(<React.StrictMode><Timetable data={await getData()} key={Date.now()} updateData={updateData} /></React.StrictMode>);
 }
 reload();

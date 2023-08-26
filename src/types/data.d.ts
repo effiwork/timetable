@@ -1,5 +1,6 @@
 ﻿import { LessonsInADay } from "./lesson";
 
+//important:记得更新schema.ts
 interface Data{
     timestamp :number;
     config :{
@@ -8,7 +9,9 @@ interface Data{
         showWeekend :boolean;
         startWeekAtSunday :boolean;
     };
-    ini_state :State;
+    ini_state :{
+        currentWeek :number;
+    };
     lessonTemplates :{
         morning :TimeBlock[];
         afternoon :TimeBlock[];
