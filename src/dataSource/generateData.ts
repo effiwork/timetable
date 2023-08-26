@@ -1,12 +1,11 @@
 ﻿import { Data } from "../types/data";
-import { validateDateAtWeek } from "../dataFlow/validateDate";
+import { getDateAtWeek } from "../dataFlow/processGhostTypes";
 
 export default function generateData() :Data{
     return {
-        timestamp: Date.now(),
         config: {
             showWeekend: false,
-            startWeek: validateDateAtWeek(),
+            startWeek: getDateAtWeek(),
             weeksInTerm: 20,
             startWeekAtSunday: false
         },

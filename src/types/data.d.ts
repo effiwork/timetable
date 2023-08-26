@@ -2,7 +2,6 @@
 
 //important:记得更新schema.ts
 interface Data{
-    timestamp :number;
     config :{
         startWeek :DateAtWeek;
         weeksInTerm :number;

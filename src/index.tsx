@@ -6,11 +6,18 @@ import "./css/main.varibles.css";
 import "./css/main.basicElements.css";
 import Timetable from "./Timetable";
 import { getData, updateData } from "./dataFlow/getData";
-import { Data } from "./types/data";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
-(window as any).reload = reload;
 export async function reload(){
-    root.render(<React.StrictMode><Timetable data={await getData()} key={Date.now()} updateData={updateData} /></React.StrictMode>);
+    const data = await getData()
+    console.warn(data);
+    root.render(<React.StrictMode><Timetable data={data} key={Date.now()} updateData={updateData} /></React.StrictMode>);
 }
 reload();
+
+//DEV ONLY
+Object.defineProperty(window, "重新加载_访问即触发", {
+    get(){
+        return reload();
+    }
+})
