@@ -29,7 +29,7 @@ body{
     font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !important;
     -webkit-tap-highlight-color: transparent;
     overflow: hidden;
-    background-color: var(--c-grey--3);
+    background-color: var(--c-grey--4);
     color: var(--c-base);
 }
 #root{

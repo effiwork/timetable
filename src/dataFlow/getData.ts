@@ -1,7 +1,7 @@
 ﻿import localforage from "localforage";
 import { reload } from "..";
 import { Data } from "../types/data";
-import Data_ from "./schema";
+//import Data_ from "./schema";
 import generateData from "../dataSource/generateData";
 
 //DEV ONLY
@@ -17,17 +17,17 @@ export async function getData() :Promise<Data>{
         const newData = generateData();
         localforage.setItem("data", newData);
         //DEV ONLY
-        console.log("生成数据", Data_.validate(newData));
+        //console.log("生成数据", Data_.validate(newData));
         return newData;
     }
     else{
-        const validateResult = Data_.validate(result);
+        //const validateResult = Data_.validate(result);
         //note:一般这里不会出现任何问题，出问题再仔细debug一下
-        if(validateResult.error !== undefined){
-            console.error(validateResult.error);
-            throw new Error();
-        }
-        return validateResult.value;
+        //if(validateResult.error !== undefined){
+        //    console.error(validateResult.error);
+        //    throw new Error();
+        //}
+        return result as Data;
     }
 }
 

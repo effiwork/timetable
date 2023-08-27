@@ -1,5 +1,5 @@
 ﻿:root{
-    --c-base: mintcream;
+    --c-base: #FFFFFFCF;
     --c-taskbar: beige;
     --c-menu: honeydew;
     --c-menu-1: antiquewhite;
@@ -36,6 +36,7 @@
     --c-6: #FFD3D3;
     --c-6-a: #FFE4E4;
     --c-black: black;
+    --c-grey--4: #191919;
     --c-grey--3: #233333;
     --c-grey--2: #444;
     --c-grey--1: dimgrey;

@@ -4,14 +4,14 @@ import "./css/main.css";
 import "./css/main.scrollbar.css";
 import "./css/main.varibles.css";
 import "./css/main.basicElements.css";
-import Timetable from "./Timetable";
-import { getData, updateData } from "./dataFlow/getData";
+import Timetable from "./components/Timetable";
+import { getData } from "./dataFlow/getData";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 export async function reload(){
     const data = await getData()
     console.warn(data);
-    root.render(<React.StrictMode><Timetable data={data} key={Date.now()} updateData={updateData} /></React.StrictMode>);
+    root.render(<React.StrictMode><Timetable data={data} key={Date.now()} /></React.StrictMode>);
 }
 reload();
 
