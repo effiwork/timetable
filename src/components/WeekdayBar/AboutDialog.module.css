@@ -1,0 +1,16 @@
+﻿.aboutWrapper{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.aboutWrapper *{
+    line-height: 2rem;
+}
+.author{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+.authorImg{
+    width: 1.5rem;
+    padding: 0 .25rem;
+}

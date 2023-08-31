@@ -7,6 +7,12 @@
     transition: background-color .1s;
     line-height: normal;
 }
+::selection{
+    background-color: var(--c-selection);
+}
+::-moz-selection{
+    background-color: var(--c-selection);
+}
 noscript{
     display: grid;
     place-items: center;

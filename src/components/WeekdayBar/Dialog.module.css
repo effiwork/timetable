@@ -1,0 +1,33 @@
+﻿.trigger{
+    cursor: pointer;
+}
+@keyframes showOverlay{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.overlay{
+    background-color: var(--c-black-tra-4);
+    position: fixed;
+    inset: 0;
+    animation: showOverlay .1s ease;
+}
+.content{
+    background-color: var(--c-grey--3);
+    border-radius: .5rem;
+    box-shadow: var(--c-grey--3) 0 .5rem 2rem -1rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    padding: 1.5rem;
+    animation: showOverlay .1s ease;
+}
+.title{
+    margin: 0 0 .5rem;
+    font-size: 2.3rem;
+}

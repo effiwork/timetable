@@ -1,4 +1,17 @@
-﻿/*#region a*/
+﻿/*#region Table*/
+td{
+    --border: solid .0625rem var(--c-border);
+    padding: .25rem;
+    margin: 0;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    text-align: center;
+}
+td:not(:nth-child(1)):not(:nth-last-child(1)){
+    border: var(--border);
+}
+/*#endregion*/
+/*#region a*/
 a{
     -webkit-user-drag: auto;
     cursor: pointer;

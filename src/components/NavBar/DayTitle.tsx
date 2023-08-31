@@ -6,17 +6,17 @@ import { getDayDescription } from "../../dataSource/enums";
 import { getDate } from "../../utils";
 
 type Props = Immutable<{
-    weekDate :DateAtWeek;
+    currentWeek_Date :DateAtWeek;
     dayIndex :number;
 }>;
 
 export default class DayTitle extends Cp<Props>{
     render() :React.ReactNode{
         return(
-            <div className={styles.title}>
+            <td className={styles.title}>
                 <div>{getDayDescription(this.props.dayIndex)}</div>
-                <div>{getDate(this.props.weekDate, this.props.dayIndex)}</div>
-            </div>
+                <div>{getDate(this.props.currentWeek_Date, this.props.dayIndex)}</div>
+            </td>
         );
     }
 }

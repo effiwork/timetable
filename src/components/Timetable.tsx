@@ -3,6 +3,7 @@ import { Data } from "../types/data";
 import NavBar from "./NavBar/NavBar";
 import { updateData } from "../dataFlow/getData";
 import { produce } from "immer";
+import WeekdayBar from "./WeekdayBar/WeekdayBar";
 
 type Props = {
     data :Data;
@@ -26,19 +27,171 @@ export default class Timetable extends Cp<Props>{
     }
     render() :React.ReactNode{
         return(<>
-            <NavBar maxWeek={this.props.data.config.weeksInTerm} currentWeek={this.props.data.ini_state.currentWeek} incrementWeek={this.incrementWeek} decrementWeek={this.decrementWeek} setWeek={this.setWeek} startWeekAtSunday={this.props.data.config.startWeekAtSunday} startWeek={this.props.data.config.startWeek} showWeekend={this.props.data.config.showWeekend} />
-            {/*<div style={{
-                display: "grid",
-                grid: `auto-flow / repeat(${this.props.data.config.showWeekend ? 8 : 6}, 1fr)`,
-                height: "100dvh",
-                width: "100dvw",
-                overflowX: "clip",
+            <NavBar maxWeek={this.props.data.config.weeksInTerm} currentWeek={this.props.data.ini_state.currentWeek} incrementWeek={this.incrementWeek} decrementWeek={this.decrementWeek} setWeek={this.setWeek} />
+            <div style={{
                 overflowY: "auto",
-                //gridTemplateAreas: renderGrid(this.props.data)
+                overflowX: "clip",
+                height: "calc(100dvh - 1.5rem - .5rem - 1rem)"
             }}>
-                <Timeline />
-            </div>*/}
-            {}
+                <table style={{
+                    width: "100dvw",
+                    borderCollapse: "collapse",
+                    tableLayout: "fixed"
+                }}>
+                    <colgroup>
+                        <col style={{
+                            width: "9rem"
+                        }} />
+                    </colgroup>
+                    <tbody>
+                        <WeekdayBar currentWeek={this.props.data.ini_state.currentWeek} showWeekend={this.props.data.config.showWeekend} startWeek={this.props.data.config.startWeek} startWeekAtSunday={this.props.data.config.startWeekAtSunday} />
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                23:32 - 42:12
+                            </td>
+                            <td>666</td><td>tedg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </>);
     }
 }

@@ -1,28 +1,22 @@
 ﻿/*Webkit 滚动条*/
 ::-webkit-scrollbar{
-    width: .48rem;
-    height: .48rem;
+    width: .5rem;
+    height: .5rem;
 }
-@property --sbbc{
-    syntax: '<color>';
-    inherits: false;
-}
+
 ::-webkit-scrollbar-thumb{
-    --sbbc: var(--c-black-tra-3);
-    background-color: var(--sbbc);
+    background-color: var(--c-grey--2);
     border-radius: .75rem;
     border: .5rem solid transparent;
-    box-shadow: inset .375rem 0 0 var(--c-grey-ll);
-    transition: --sbbc .4s ease;
 }
 ::-webkit-scrollbar-thumb:hover{
-    --sbbc: var(--c-black-tra-5);
+    background-color: var(--c-grey);
 }
 ::-webkit-scrollbar-thumb:active{
-    --sbbc: var(--c-black-tra-4);
+    background-color: var(--c-grey--1);
 }
 ::-webkit-scrollbar-track{
-    background-color: transparent;
+    background-color: var(--c-grey--3);
 }
 ::-webkit-scrollbar-corner{
     height: 0;
@@ -36,7 +30,7 @@
 }
 /*Firefox 滚动条*/
 *{
-    scrollbar-color: var(--c-black-tra-3) transparent;
+    scrollbar-color: var(--c-grey--2) transparent;
     scrollbar-gutter: auto;
     scrollbar-width: thin;
 }

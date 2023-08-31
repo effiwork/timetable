@@ -1,0 +1,21 @@
+﻿.tr{
+    position: sticky;
+    top: 0;
+    border-bottom: solid .125rem var(--c-border);
+}
+.td{
+    text-align: center;
+}
+/*hack:究极css class选择器*/
+.tr.tr td{
+    border: none;
+    background-color: var(--c-grey--3);
+}
+.menu{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+.time{
+    font-size: .9rem;
+}
