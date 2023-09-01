@@ -1,13 +1,12 @@
 ﻿/*#region Table*/
-td{
-    --border: solid .0625rem var(--c-border);
+:where(div[role="dialog"], #root) td{
     padding: .25rem;
     margin: 0;
     border-top: var(--border);
     border-bottom: var(--border);
     text-align: center;
 }
-td:not(:nth-child(1)):not(:nth-last-child(1)){
+:where(div[role="dialog"], #root) td:not(:nth-child(1)):not(:nth-last-child(1)){
     border: var(--border);
 }
 /*#endregion*/
@@ -19,14 +18,14 @@ a{
     text-decoration: none;
     color: var(--c-link);
 }
-a:visited, a:-webkit-any-link{
+:is(a:visited, a:-webkit-any-link){
     cursor: pointer;
     transition: color .2s, text-decoration .2s;
     text-decoration: none;
     color: var(--c-link);
 }
 /*上下两个不能合在一起，合在一起后 **Google Chrome 就会拒绝识别它们……*/
-a:-moz-any-link, a:any-link{
+:is(a:-moz-any-link, a:any-link){
     cursor: pointer;
     transition: color .1s, text-decoration .1s;
     text-decoration: none;
@@ -41,7 +40,7 @@ a:active{
 }
 /*#endregion*/
 /*#region Button*/
-button{
+:where(div[role="dialog"], #root) button{
     appearance: auto;
     display: block;
     text-align: center;

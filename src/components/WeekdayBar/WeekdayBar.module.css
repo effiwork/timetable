@@ -1,15 +1,15 @@
-﻿.tr{
-    position: sticky;
-    top: 0;
-    border-bottom: solid .125rem var(--c-border);
-}
-.td{
+﻿.td{
     text-align: center;
 }
 /*hack:究极css class选择器*/
 .tr.tr td{
-    border: none;
+    border: none !important;
     background-color: var(--c-grey--3);
+}
+.tr{
+    position: sticky;
+    top: 0;
+    border-bottom: solid .125rem var(--c-border);
 }
 .menu{
     display: flex;

@@ -11,7 +11,8 @@
     --c-boxshadow: skyblue;
     --c-focus: dodgerblue;
     --c-border: #5E87C9;
-    --c-switch-on: #2383E2;
+    --border: solid .0625rem var(--c-border);
+    --c-main: #2383E2;
     --c-warning :#F9DF82;
     --c-danger: #FF416C;
     --c-success: #27CE7F;

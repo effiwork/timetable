@@ -1,1 +1,13 @@
-﻿
+﻿.title{
+    font-size: 1.2rem;
+}
+.description{
+    font-size: .8rem;
+}
+.commonWrapperOut{
+    padding: .4rem .5rem;
+    border-radius: .5rem;
+}
+.commonWrapperOut:hover{
+    background-color: var(--c-grey--2-5);
+}

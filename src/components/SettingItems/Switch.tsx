@@ -12,10 +12,10 @@ type Props = {
 export default class Switch extends Cp<Props>{
     render() :React.ReactNode{
         return(
-            <div className={`${styles.wrapperOut} ${mainStyles.noselect}`}>
+            <div className={`${commonStyles.commonWrapperOut} ${styles.wrapperOut} ${mainStyles.noselect}`}>
                 <label className={styles.wrapperIn} htmlFor={`settings-${this.props.id}`}>
-                    <div className={styles.title}>{this.props.title}</div>
-                    <div className={styles.description}>{this.props.description}</div>
+                    <div className={commonStyles.title}>{this.props.title}</div>
+                    <div className={commonStyles.description}>{this.props.description}</div>
                 </label>
                 <div className={styles.activeWrapper}>
                     <Switch6.Root className={styles.root} id={`settings-${this.props.id}`}>

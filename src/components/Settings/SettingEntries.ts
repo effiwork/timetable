@@ -33,7 +33,7 @@ export const SettingEntries :SettingEntry[] = [
     {
         id: "start-date",
         title: "开始上课的日期",
-        description: "会自动转换为星期一。",
+        description: "手动输入格式：<年份>-<周数>周",
         type: SettingTypes.dateAtWeek
     },
     {

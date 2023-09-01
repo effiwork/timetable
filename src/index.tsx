@@ -4,6 +4,7 @@ import "./css/main.css";
 import "./css/main.scrollbar.css";
 import "./css/main.varibles.css";
 import "./css/main.basicElements.css";
+import "./css/main.antdFix.css";
 import Timetable from "./components/Timetable";
 import { getData } from "./dataFlow/getData";
 
