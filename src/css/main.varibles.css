@@ -4,9 +4,9 @@
     --c-menu: honeydew;
     --c-menu-1: antiquewhite;
     --c-menu-2: beige;
-    --c-link: #0E73E5;
+    --c-link: #4694ec;
+    --c-link-d: #3b82d7;
     --c-link-tra: #B7B0DFB9;
-    --c-link-d: #164F96;
     --c-active: olive;
     --c-boxshadow: skyblue;
     --c-focus: dodgerblue;
@@ -38,6 +38,7 @@
     --c-6: #FFD3D3;
     --c-6-a: #FFE4E4;
     --c-black: black;
+    --c-grey--5: #0E0E0E;
     --c-grey--4: #191919;
     --c-grey--3: #202323;
     --c-grey--2-5: #2C2C2C;

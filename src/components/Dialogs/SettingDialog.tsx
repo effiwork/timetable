@@ -22,7 +22,7 @@ export default class SettingDialog extends Cp{
                 <Dialog.Portal>
                     <Dialog.Overlay className={commonStyles.overlay} />
                     <Dialog.Content
-                        className={commonStyles.content}
+                        className={`${commonStyles.content} ${mainStyles.noselect}`}
                         onPointerDownOutside={event=>{event.preventDefault();}}
                         onEscapeKeyDown={event=>{event.preventDefault();}}
                         aria-describedby="单击“保存并应用”以保存。单击“×”以取消。"

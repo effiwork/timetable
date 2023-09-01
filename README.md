@@ -10,7 +10,6 @@
 - [Create React App](https://create-react-app.dev)
 - [radix-ui](https://radix-ui.com)
 - [Immer.js](https://immerjs.github.io/immer)
-- [Joi.js](https://joi.dev)
 - [localforage](https://localforage.docschina.org)
 - [TypeScript](https://www.typescriptlang.org)
 
