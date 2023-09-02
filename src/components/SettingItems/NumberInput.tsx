@@ -2,22 +2,22 @@
 import commonStyles from "./SettingItems.module.css";
 import styles from "./NumberInput.module.css";
 import mainStyles from "../../css/main.module.css";
+import { InputNumber } from "antd";
 
 type Props = {
-    id: string;
     description: string;
     title: string;
 };
 export default class NumberInput extends Cp<Props>{
     render() :React.ReactNode{
         return(
-            <div className={`${styles.wrapperOut} ${mainStyles.noselect}`}>
-                <label className={styles.wrapperIn} htmlFor={`settings-${this.props.id}`}>
-                    <div className={styles.title}>{this.props.title}</div>
-                    <div className={styles.description}>{this.props.description}</div>
+            <div className={`${commonStyles.commonWrapperOut} ${mainStyles.noselect}`}>
+                <label className={styles.wrapperIn}>
+                    <div className={commonStyles.title}>{this.props.title}</div>
+                    <div className={commonStyles.description}>{this.props.description}</div>
                 </label>
                 <div className={styles.activeWrapper}>
-                    <input type="number" />
+                    <InputNumber min={0} />
                 </div>
             </div>
         );

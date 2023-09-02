@@ -3,7 +3,6 @@
     width: .5rem;
     height: .5rem;
 }
-
 ::-webkit-scrollbar-thumb{
     background-color: var(--c-grey--2);
     border-radius: .75rem;

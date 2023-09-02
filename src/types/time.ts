@@ -1,6 +1,4 @@
-﻿//important:记得更新schema.ts
-
-export interface TimeBlock{
+﻿export interface TimeBlock{
     startTime :Time;
     endTime :Time;
 }

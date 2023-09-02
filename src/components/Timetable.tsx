@@ -15,17 +15,17 @@ type Props = {
 export default class Timetable extends Cp<Props>{
     private incrementWeek = ()=>{
         updateData(produce(this.props.data, draft=>{
-            if(draft.ini_state.currentWeek < draft.config.weeksInTerm) draft.ini_state.currentWeek++;
+            if(draft.state.currentWeek < draft.config.weeksInTerm) draft.state.currentWeek++;
         }));
     }
     private decrementWeek = ()=>{
         updateData(produce(this.props.data, draft=>{
-            if(draft.ini_state.currentWeek > 1) draft.ini_state.currentWeek--;
+            if(draft.state.currentWeek > 1) draft.state.currentWeek--;
         }));
     }
     private setWeek = (week :number)=>{
         updateData(produce(this.props.data, draft=>{
-            draft.ini_state.currentWeek = week;
+            draft.state.currentWeek = week;
         }));
     }
     render() :React.ReactNode{
@@ -35,7 +35,8 @@ export default class Timetable extends Cp<Props>{
                 theme={{
                     token: {
                         colorPrimary: "#2383E2",
-                        colorBgElevated: "var(--c-grey--4)"
+                        colorBgElevated: "var(--c-grey--4)",
+                        colorBgContainer: "var(--c-grey--4)",
                     },
                     algorithm: theme.darkAlgorithm,
                     components: {
@@ -44,7 +45,7 @@ export default class Timetable extends Cp<Props>{
             >
                 <NavBar
                     maxWeek={this.props.data.config.weeksInTerm}
-                    currentWeek={this.props.data.ini_state.currentWeek}
+                    currentWeek={this.props.data.state.currentWeek}
                     incrementWeek={this.incrementWeek}
                     decrementWeek={this.decrementWeek}
                     setWeek={this.setWeek}
@@ -66,10 +67,8 @@ export default class Timetable extends Cp<Props>{
                         </colgroup>
                         <tbody>
                             <WeekdayBar
-                                currentWeek={this.props.data.ini_state.currentWeek}
-                                showWeekend={this.props.data.config.showWeekend}
-                                startWeek={this.props.data.config.startWeek}
-                                startWeekAtSunday={this.props.data.config.startWeekAtSunday}
+                                config={this.props.data.config}
+                                currentWeek={this.props.data.state.currentWeek}
                             />
                         </tbody>
                     </table>

@@ -5,7 +5,6 @@ import mainStyles from "../../css/main.module.css";
 import { DatePicker } from "antd";
 
 type Props = {
-    id: string;
     description: string;
     title: string;
 };
@@ -17,7 +16,7 @@ export default class WeekRange extends Cp<Props>{
                     <div className={commonStyles.title}>{this.props.title}</div>
                     <div className={commonStyles.description}>{this.props.description}</div>
                 </label>
-                <DatePicker.RangePicker picker="week" placeholder={["",""]} id={this.props.id} />
+                <DatePicker.RangePicker picker="week" placeholder={["",""]} />
             </div>
         );
     }

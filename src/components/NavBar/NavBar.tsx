@@ -1,5 +1,6 @@
 ﻿import React, { Component as Cp } from "react";
 import mainStyles from "../../css/main.module.css";
+import styles from "./NavBar.module.css";
 import { Immutable } from "immer";
 
 type Props = Immutable<{
@@ -75,10 +76,6 @@ export default class NavBar extends Cp<Props, State>{
     //不能在这里做任何updateData的事情，因为data对象不在这里，只有根组件有访问完整data的权限，所以只能由根组件更新
 
     render() :React.ReactNode{
-        const buttonStyle :React.CSSProperties = {
-            cursor: "pointer",
-            padding: "0 2rem"
-        };
         return(<div className={mainStyles.noselect} style={{
             display: "flex",
             flexFlow: "row nowrap",
@@ -88,7 +85,7 @@ export default class NavBar extends Cp<Props, State>{
             height: "1.5rem",
             backgroundColor: "var(--c-grey--3)"
         }}>
-            <div style={buttonStyle} title="后退一周" onClick={this.props.decrementWeek}>←</div>
+            <div className={`${styles.button}${this.props.currentWeek === 1 ? ` ${styles.disabled}` : ""}`} title="后退一周" onClick={this.props.decrementWeek}>←</div>
             <div style={{
                 margin: "0 2rem"
             }}>
@@ -114,7 +111,7 @@ export default class NavBar extends Cp<Props, State>{
                     >{this.state.currentWeek}</span>
                 周</div>
             </div>
-            <div style={buttonStyle} title="前进一周" onClick={this.props.incrementWeek}>→</div>
+            <div className={`${styles.button}${this.props.currentWeek === this.props.maxWeek ? ` ${styles.disabled}` : ""}`} title="前进一周" onClick={this.props.incrementWeek}>→</div>
         </div>);
     }
 

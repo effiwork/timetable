@@ -70,10 +70,11 @@ export default class AboutDialog extends Cp<{}, State>{
                     >
                         <Dialog.Title className={commonStyles.title}>关于与声明</Dialog.Title>
                         <div className={styles.aboutWrapper}>
-                            <div className={styles.author}>作者：<img className={styles.authorImg} alt="LJM12914 的图标" src="https://www.ljm.im/avatar/512.png" />LJM12914</div>
-                            <div>制作日期：2023.8.22-9.2</div>
+                            <div className={styles.author} onDoubleClick={()=>{
+                                alert("🎆🎇🎆");
+                            }}>由<img className={styles.authorImg} alt="LJM12914 的图标" src="https://www.ljm.im/avatar/512.png" />LJM12914 为❤️而作</div>
                             <div>为了大屏显示和周重复事件而生，当 Notion 提供重复事件后将终止开发和支持（可能得等上几年😂）。</div>
-                            <div>我爱软科</div>
+                            <div>这是一份遥远的礼物，送给曾经与我相伴，去往大学的同学们。</div>
                             <hr />
                             <div><a href="https://github.com/scu-dev/timetable">GitHub 仓库</a>&emsp;<a href="https://github.com/ljm12914">LJM12914 GitHub 主页</a>&emsp;<a href="https://i.ljm.im">LJM12914 个人网站</a></div>
                             <hr />

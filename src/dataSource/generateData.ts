@@ -9,7 +9,7 @@ export default function generateData() :Data{
             weeksInTerm: 20,
             startWeekAtSunday: false
         },
-        ini_state: {
+        state: {
             currentWeek: 1,
         },
         lessons: [

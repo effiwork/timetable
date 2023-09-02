@@ -3,7 +3,6 @@ import { LessonLocation } from "../dataSource/enums";
 import { LessonSubject } from "../dataSource/enums";
 import { colorInstance } from "./color";
 
-//important:记得更新schema.ts
 
 export type LessonsInADay = Lesson[];
 

@@ -1,28 +1,29 @@
-﻿import React, { Component as Cp } from "react";
+﻿import React, { Component as Cp, useState } from "react";
 import commonStyles from "./SettingItems.module.css";
 import styles from "./Switch.module.css";
 import mainStyles from "../../css/main.module.css";
-import * as Switch6 from "@radix-ui/react-switch";
+import * as Šẇìťčḣ from "@radix-ui/react-switch";
 
 type Props = {
-    id: string;
-    description: string;
-    title: string;
+    id :string;
+    description :string;
+    title :string;
+    checked :boolean;
 };
-export default class Switch extends Cp<Props>{
-    render() :React.ReactNode{
-        return(
-            <div className={`${commonStyles.commonWrapperOut} ${styles.wrapperOut} ${mainStyles.noselect}`}>
-                <label className={styles.wrapperIn} htmlFor={`settings-${this.props.id}`}>
-                    <div className={commonStyles.title}>{this.props.title}</div>
-                    <div className={commonStyles.description}>{this.props.description}</div>
-                </label>
-                <div className={styles.activeWrapper}>
-                    <Switch6.Root className={styles.root} id={`settings-${this.props.id}`}>
-                        <Switch6.Thumb className={styles.thumb} />
-                    </Switch6.Root>
-                </div>
+export default function Switch(props :Props){
+    const [checked, setChecked] = useState(props.checked);
+    return(
+        <div className={`${commonStyles.commonWrapperOut} ${styles.wrapperOut} ${mainStyles.noselect}`}>
+            <label className={styles.wrapperIn} htmlFor={`settings-${props.id}`}>
+                <div className={commonStyles.title}>{props.title}</div>
+                <div className={commonStyles.description}>{props.description}</div>
+            </label>
+            <div className={styles.activeWrapper}>
+                <Šẇìťčḣ.Root className={styles.root} id={`settings-${props.id}`}>
+                    <Šẇìťčḣ.Thumb className={styles.thumb} />
+                </Šẇìťčḣ.Root>
+                {/*<Šẇìťčḣ checked={checked} />*/}
             </div>
-        );
-    }
+        </div>
+    );
 }

@@ -1,6 +1,4 @@
-﻿//important:记得更新schema.ts
-
-import { Immutable } from "immer";
+﻿import { Immutable } from "immer";
 
 type foregroundColor = colorString;
 

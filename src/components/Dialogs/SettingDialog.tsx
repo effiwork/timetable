@@ -4,12 +4,12 @@ import styles from "./SettingDialog.module.css";
 import mainStyles from "../../css/main.module.css";
 import { GearIcon, Cross2Icon } from "@radix-ui/react-icons";
 import * as Dialog from "@radix-ui/react-dialog";
-import SettingSection from "../Settings/SettingSection";
+import SettingSection, { SettingData } from "../Settings/SettingSection";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 
 /**@once 但鉴于东西太多还是把css放到外面去了*/
-export default class SettingDialog extends Cp{
+export default class SettingDialog extends Cp<SettingData>{
     render() :React.ReactNode{
         return(
             <Dialog.Root>
@@ -28,7 +28,7 @@ export default class SettingDialog extends Cp{
                         aria-describedby="单击“保存并应用”以保存。单击“×”以取消。"
                     >
                         <Dialog.Title className={commonStyles.title}>设置</Dialog.Title>
-                        <SettingSection />
+                        <SettingSection {...this.props} />
                         <Dialog.Close><Cross2Icon className={styles.close} /></Dialog.Close>
                         <Dialog.Close className={`${styles.saveButton} ${mainStyles.noselect}`}>保存并应用</Dialog.Close>
                     </Dialog.Content>

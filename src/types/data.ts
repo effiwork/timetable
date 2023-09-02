@@ -1,7 +1,6 @@
 ﻿import { LessonsInADay } from "./lesson";
 import { DateAtWeek, TimeBlock } from "./time";
 
-//important:记得更新schema.ts
 export interface Data{
     config :{
         startWeek :DateAtWeek;
@@ -9,7 +8,7 @@ export interface Data{
         showWeekend :boolean;
         startWeekAtSunday :boolean;
     };
-    ini_state :{
+    state :{
         currentWeek :number;
     };
     lessonTemplates :{

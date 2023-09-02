@@ -1,3 +1,4 @@
 ﻿.wrapper{
-    margin: 1rem 0;
+    overflow-y: overlay;
+    padding-bottom: 6rem;
 }
