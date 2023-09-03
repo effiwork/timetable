@@ -1,10 +1,11 @@
 ﻿import React, { Component as Cp } from "react";
 import styles from "./SettingSection.module.css";
-import Switch from "../SettingItems/Switch";
-import WeekRange from "../SettingItems/WeekRange";
-import { SettingEntries, SettingEntry, SettingTypes } from "./SettingEntries";
-import NumberInput from "../SettingItems/NumberInput";
 import { Data } from "../../types/data";
+import Switch from "./SettingItems/Switch";
+import WeekRange from "./SettingItems/WeekRange";
+import NumberInput from "./SettingItems/NumberInput";
+import Button from "./SettingItems/Button";
+import meta from "../../dataSource/meta";
 
 export type SettingData = Data["config"];
 /**@once*/
@@ -55,8 +56,12 @@ export default class SettingSection extends Cp<SettingData>{
                 />
                 <NumberInput
                     title="横向布局最小宽度"
-                    description="用于在手机上滑动查看而不是被迫看很窄的页面。留空以跟随浏览器宽度。单位为像素，一般在 500 或以上才有明显效果。"
+                    description="用于在手机上滑动查看而不是被迫看很窄的页面。设为 0 以跟随浏览器宽度。一般在 400 像素或以上才有效果。"
+                    addonAfter="px"
                 />
+                <h5>数据</h5>
+                <Button title="导出所有数据" description="将您的数据和设置全部下载为 JSON 文件。强烈建议定期备份。" />
+                <Button title="导入数据" description="请先在上面备份再导入。导入不同版本的可能出现不兼容问题。" />
                 <h5>软件</h5>
                 <Switch
                     id="lock-data"
@@ -76,6 +81,8 @@ export default class SettingSection extends Cp<SettingData>{
                     description="在每节课前通过浏览器通知您，不需要保持此页面开启。需要 PC 端浏览器或移动端 Chrome 浏览器。第一次打开请在浏览器弹窗中点击“允许”以授权本软件发送通知。"
                     checked={false}
                 />
+                <div>当前数据结构版本：{meta.version}</div>
+                <div>当前软件版本：{meta.std_version}</div>
             </div>
         );
     }

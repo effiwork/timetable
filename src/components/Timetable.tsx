@@ -1,4 +1,5 @@
 ﻿import React, { Component as Cp } from "react";
+import styles from "./Timetable.module.css";
 import { Data } from "../types/data";
 import NavBar from "./NavBar/NavBar";
 import { updateData } from "../dataFlow/getData";
@@ -37,41 +38,45 @@ export default class Timetable extends Cp<Props>{
                         colorPrimary: "#2383E2",
                         colorBgElevated: "var(--c-grey--4)",
                         colorBgContainer: "var(--c-grey--4)",
+                        colorBorder: "var(--c-main)"
                     },
                     algorithm: theme.darkAlgorithm,
                     components: {
                     }
                 }}
             >
-                <NavBar
-                    maxWeek={this.props.data.config.weeksInTerm}
-                    currentWeek={this.props.data.state.currentWeek}
-                    incrementWeek={this.incrementWeek}
-                    decrementWeek={this.decrementWeek}
-                    setWeek={this.setWeek}
-                />
-                <div style={{
-                    overflowY: "auto",
-                    overflowX: "clip",
-                    height: "calc(100dvh - 1.5rem - .5rem - 1rem)"
-                }}>
-                    <table style={{
-                        width: "100dvw",
-                        borderCollapse: "collapse",
-                        tableLayout: "fixed"
+                <div className={styles.main}>
+                    <NavBar
+                        maxWeek={this.props.data.config.weeksInTerm}
+                        currentWeek={this.props.data.state.currentWeek}
+                        incrementWeek={this.incrementWeek}
+                        decrementWeek={this.decrementWeek}
+                        setWeek={this.setWeek}
+                    />
+                    <div style={{
+                        overflowY: "auto",
+                        overflowX: "clip",
+                        height: "calc(100dvh - 1.5rem - .5rem - 1rem)"
                     }}>
-                        <colgroup>
-                            <col style={{
-                                width: "9rem"
-                            }} />
-                        </colgroup>
-                        <tbody>
-                            <WeekdayBar
-                                config={this.props.data.config}
-                                currentWeek={this.props.data.state.currentWeek}
-                            />
-                        </tbody>
-                    </table>
+                        <table style={{
+                            width: "100dvw",
+                            borderCollapse: "collapse",
+                            tableLayout: "fixed"
+                        }}>
+                            <colgroup>
+                                <col className={styles.timeline} />
+                            </colgroup>
+                            <tbody>
+                                <WeekdayBar
+                                    config={this.props.data.config}
+                                    currentWeek={this.props.data.state.currentWeek}
+                                />
+                                <tr>
+                                    <td>55:55 - 53:55</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </ConfigProvider>
         );

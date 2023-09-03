@@ -1,7 +1,7 @@
 ﻿import React, { Component as Cp, useState } from "react";
 import commonStyles from "./SettingItems.module.css";
 import styles from "./Switch.module.css";
-import mainStyles from "../../css/main.module.css";
+import mainStyles from "../../../css/main.module.css";
 import * as Šẇìťčḣ from "@radix-ui/react-switch";
 
 type Props = {

@@ -14,9 +14,8 @@ export default class SettingDialog extends Cp<SettingData>{
         return(
             <Dialog.Root>
                 <Dialog.Trigger asChild className={commonStyles.trigger}>
-                    <div title="设置">
+                    <div title="设置" aria-describedby="单击打开设置对话框。">
                         <GearIcon width={"1.5rem"} height={"1.5rem"} />
-                        <VisuallyHidden.Root>设置。单击打开设置对话框。</VisuallyHidden.Root>
                     </div>
                 </Dialog.Trigger>
                 <Dialog.Portal>

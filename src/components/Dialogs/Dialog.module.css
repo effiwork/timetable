@@ -23,7 +23,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30rem;
+    width: min(calc(95dvw - 1.6rem), 30rem);
     padding: .8rem;
     animation: showOverlay .1s ease;
     max-height: calc(95dvh - 1.6rem);
