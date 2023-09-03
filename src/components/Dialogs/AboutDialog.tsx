@@ -4,7 +4,6 @@ import commonStyles from "./Dialog.module.css";
 import mainStyles from "../../css/main.module.css";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
 import * as Dialog from "@radix-ui/react-dialog";
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 
 type State = {
