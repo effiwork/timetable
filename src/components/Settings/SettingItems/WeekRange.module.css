@@ -1,0 +1,8 @@
+﻿.wrapperIn{
+    margin-bottom: .4rem;
+    display: block;
+}
+.activeWrapper{
+    display: flex;
+    flex-flow: row-reverse;
+}

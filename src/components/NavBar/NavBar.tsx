@@ -76,41 +76,29 @@ export default class NavBar extends Cp<Props, State>{
     //不能在这里做任何updateData的事情，因为data对象不在这里，只有根组件有访问完整data的权限，所以只能由根组件更新
 
     render() :React.ReactNode{
-        return(<div className={mainStyles.noselect} style={{
-            display: "flex",
-            flexFlow: "row nowrap",
-            justifyContent: "center",
-            padding: ".5rem 0 1rem",
-            fontSize: "1.2rem",
-            height: "1.5rem",
-            backgroundColor: "var(--c-grey--3)"
-        }}>
+        return(<div className={`${mainStyles.noselect} ${styles.container}`}>
             <div className={`${styles.button}${this.props.currentWeek === 1 ? ` ${styles.disabled}` : ""}`} title="后退一周" onClick={this.props.decrementWeek}>←</div>
-            <div style={{
-                margin: "0 2rem"
-            }}>
-                <div
+            <div
+                className={styles.weekNav}
+                title="输入周数"
+                onClick={this.clickCB}
+                onBlur={this.blurCB}
+                style={{
+                    cursor: this.state.editing ? "text" : "pointer"
+                }}
+            >第
+                <span
+                    className={mainStyles.reselect}
+                    ref={this.ref}
+                    contentEditable={this.state.editing}
                     style={{
-                        cursor: this.state.editing ? "text" : "pointer",
-                        padding: "0 2rem",
+                        whiteSpace: "pre",
+                        display: "inline-block",
+                        textAlign: "center",
+                        minWidth: "4rem"
                     }}
-                    title="输入周数"
-                    onClick={this.clickCB}
-                    onBlur={this.blurCB}
-                >第
-                    <span
-                        className={mainStyles.reselect}
-                        ref={this.ref}
-                        contentEditable={this.state.editing}
-                        style={{
-                            whiteSpace: "pre",
-                            display: "inline-block",
-                            textAlign: "center",
-                            minWidth: "4rem"
-                        }}
-                    >{this.state.currentWeek}</span>
-                周</div>
-            </div>
+                >{this.state.currentWeek}</span>
+            周</div>
             <div className={`${styles.button}${this.props.currentWeek === this.props.maxWeek ? ` ${styles.disabled}` : ""}`} title="前进一周" onClick={this.props.incrementWeek}>→</div>
         </div>);
     }

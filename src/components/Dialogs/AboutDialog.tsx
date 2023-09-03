@@ -2,9 +2,8 @@
 import styles from "./AboutDialog.module.css";
 import commonStyles from "./Dialog.module.css";
 import mainStyles from "../../css/main.module.css";
-import * as Dialog from "@radix-ui/react-dialog";
 import { InfoCircledIcon } from "@radix-ui/react-icons";
-import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
+import * as Dialog from "@radix-ui/react-dialog";
 
 
 type State = {
@@ -37,7 +36,7 @@ export default class AboutDialog extends Cp<{}, State>{
             downOnAboutOverlay: false
         });
     }
-    render() :React.ReactNode{
+    render(): React.ReactNode {
         return(
             <Dialog.Root
                 open={this.state.aboutOpened}
@@ -48,9 +47,8 @@ export default class AboutDialog extends Cp<{}, State>{
                 }}
             >
                 <Dialog.Trigger asChild className={commonStyles.trigger}>
-                    <div title="关于与声明">
+                    <div title="关于与声明" aria-describedby="单击打开对话框。">
                         <InfoCircledIcon width={"1.5rem"} height={"1.5rem"} />
-                        <VisuallyHidden.Root>关于与声明。单击打开对话框。</VisuallyHidden.Root>
                     </div>
                 </Dialog.Trigger>
                 <Dialog.Portal>
@@ -71,7 +69,6 @@ export default class AboutDialog extends Cp<{}, State>{
                         <Dialog.Title className={commonStyles.title}>关于与声明</Dialog.Title>
                         <div className={styles.aboutWrapper}>
                             <div className={styles.author} onDoubleClick={()=>{
-                                //todo:变成Dialog而不是弹窗！
                                 alert("🎆🎇🎆");
                             }}>由<img className={styles.authorImg} alt="LJM12914 的图标" src="https://www.ljm.im/avatar/512.png" />LJM12914 为❤️而作</div>
                             <div>为了大屏显示和周重复事件而生，当 Notion 提供重复事件后将终止开发和支持（可能得等上几年😂）。</div>
