@@ -1,31 +1,9 @@
-﻿.container{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    padding: .5rem 0 1rem;
-    font-size: 1.2rem;
-    height: 1.5rem;
-    background-color: var(--c-grey--3);
-}
-.weekNav{
-    padding: 0 2rem;
-    margin: 0 2rem;
-}
-.button{
+﻿.button{
     cursor: pointer;
-    transition: color .1s ease;
     padding: 0 2rem;
+    transition: color .1s ease;
 }
 .disabled{
     cursor: revert;
     color: var(--c-grey--3);
-}
-@container (max-width: 30rem){
-    .weekNav{
-        padding: 0 .5rem;
-        margin: 0 .5rem;
-    }
-    .button{
-        padding: 0 1rem;
-    }
 }

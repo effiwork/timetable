@@ -20,7 +20,3 @@
 .saveButton:hover{
     background-color: var(--c-grey--1);
 }
-.saveButton:active{
-    transition: background-color .05s ease;
-    background-color: var(--c-grey--2-75);
-}

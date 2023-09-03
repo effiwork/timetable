@@ -47,8 +47,9 @@ export default class AboutDialog extends Cp<{}, State>{
                 }}
             >
                 <Dialog.Trigger asChild className={commonStyles.trigger}>
-                    <div title="关于与声明" aria-describedby="单击打开对话框。">
+                    <div title="关于与声明">
                         <InfoCircledIcon width={"1.5rem"} height={"1.5rem"} />
+                        <VisuallyHidden.Root>关于与声明。单击打开对话框。</VisuallyHidden.Root>
                     </div>
                 </Dialog.Trigger>
                 <Dialog.Portal>
