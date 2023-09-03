@@ -3,10 +3,9 @@ import commonStyles from "./Dialog.module.css";
 import styles from "./SettingDialog.module.css";
 import mainStyles from "../../css/main.module.css";
 import SettingSection, { SettingData } from "../Settings/SettingSection";
-import { Button, Modal } from "antd";
-import { SettingOutlined } from "@ant-design/icons";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon, GearIcon } from "@radix-ui/react-icons";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 
 /**@once 但鉴于东西太多还是把css放到外面去了*/

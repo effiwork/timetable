@@ -19,10 +19,9 @@ export default function Switch(props :Props){
                 <div className={commonStyles.description}>{props.description}</div>
             </label>
             <div className={styles.activeWrapper}>
-                {/*<Šẇìťčḣ.Root className={styles.root} id={`settings-${props.id}`}>
+                <Šẇìťčḣ.Root className={styles.root} id={`settings-${props.id}`}>
                     <Šẇìťčḣ.Thumb className={styles.thumb} />
                 </Šẇìťčḣ.Root>
-                <Šẇìťčḣ checked={checked} />*/}
             </div>
         </div>
     );
