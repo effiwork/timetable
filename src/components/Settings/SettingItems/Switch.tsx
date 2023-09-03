@@ -2,7 +2,6 @@
 import commonStyles from "./SettingItems.module.css";
 import styles from "./Switch.module.css";
 import mainStyles from "../../../css/main.module.css";
-import * as Šẇìťčḣ from "@radix-ui/react-switch";
 
 type Props = {
     id :string;
@@ -19,10 +18,10 @@ export default function Switch(props :Props){
                 <div className={commonStyles.description}>{props.description}</div>
             </label>
             <div className={styles.activeWrapper}>
-                <Šẇìťčḣ.Root className={styles.root} id={`settings-${props.id}`}>
+                {/*<Šẇìťčḣ.Root className={styles.root} id={`settings-${props.id}`}>
                     <Šẇìťčḣ.Thumb className={styles.thumb} />
                 </Šẇìťčḣ.Root>
-                {/*<Šẇìťčḣ checked={checked} />*/}
+                <Šẇìťčḣ checked={checked} />*/}
             </div>
         </div>
     );
