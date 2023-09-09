@@ -52,9 +52,9 @@ export default function DayTitle(props :Props){
     ) result = `${currentWeek_Date.getFullYear()}.${date}`;
     else result = date;
     return(
-        <td className={styles.title}>
+        <th className={styles.title}>
             <div>{getDayDescription(dayIndex)}</div>
             <div>{result}</div>
-        </td>
+        </th>
     );
 }

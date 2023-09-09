@@ -1,8 +1,8 @@
-﻿.td{
+﻿.th{
     text-align: center;
 }
 /*hack:究极css class选择器*/
-.tr.tr td{
+.tr.tr th{
     border: none !important;
     background-color: var(--c-grey--3);
 }

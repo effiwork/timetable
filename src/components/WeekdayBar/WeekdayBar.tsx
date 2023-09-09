@@ -2,11 +2,9 @@
 import styles from "./WeekdayBar.module.css";
 import mainStyles from "../../css/main.module.css";
 import { getDateAtWeekByWeekNumber } from "../../utils";
-import { DateAtWeek } from "../../types/time";
 import DayTitle from "./DayTitle";
 import SettingDialog from "../Dialogs/SettingDialog";
 import AboutDialog from "../Dialogs/AboutDialog";
-import { Data } from "../../types/data";
 import { SettingData } from "../Settings/SettingSection";
 
 type Props = {
@@ -24,14 +22,14 @@ export default class WeekdayBar extends Cp<Props, State>{
             time: new Date()
         };
     }
-    
+
     timerID :number = -12914;
     componentDidMount(){
-        setInterval(()=>{
+        this.timerID = setInterval(()=>{
             this.setState({
                 time: new Date()
             });
-        }, 1000);
+        }, 1000) as unknown as number;
     }
     componentWillUnmount(){
         if(this.timerID !== -12914) clearInterval(this.timerID);
@@ -41,13 +39,13 @@ export default class WeekdayBar extends Cp<Props, State>{
         const currentWeek_Date = getDateAtWeekByWeekNumber(this.props.config.startWeek, this.props.currentWeek);
         return(
             <tr className={styles.tr}>
-                <td className={`${mainStyles.noselect} ${styles.td}`}>
+                <th className={`${mainStyles.noselect} ${styles.th}`}>
                     <div className={styles.menu}>
                         <AboutDialog />
                         <SettingDialog {...this.props.config} />
                     </div>
                     <div className={styles.time}>{`${this.state.time.getFullYear()}.${this.state.time.getMonth() + 1}.${this.state.time.getDate()} ${this.state.time.getHours()}:${(this.state.time.getMinutes() + "").padStart(2, "0")}`}</div>
-                </td>
+                </th>
                 {
                     this.props.config.startWeekAtSunday ? <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={0}/> : null
                 }

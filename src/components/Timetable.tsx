@@ -5,7 +5,7 @@ import NavBar from "./NavBar/NavBar";
 import { updateData } from "../dataFlow/getData";
 import { produce } from "immer";
 import WeekdayBar from "./WeekdayBar/WeekdayBar";
-import { ConfigProvider, theme } from 'antd';
+import { ConfigProvider, TimePicker, theme } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import "dayjs/locale/zh-cn";
 
@@ -30,6 +30,7 @@ export default class Timetable extends Cp<Props>{
         }));
     }
     render() :React.ReactNode{
+        const t = "transparent";
         return(
             <ConfigProvider
                 locale={zhCN}
@@ -42,7 +43,21 @@ export default class Timetable extends Cp<Props>{
                     },
                     algorithm: theme.darkAlgorithm,
                     components: {
-                    }
+                        DatePicker: {
+                            paddingLG: 0,
+                            paddingMD: 0,
+                            paddingSM: 0,
+                            borderRadius: 0,
+                            colorBorder: t,
+                            hoverBorderColor: t,
+                            activeBorderColor: t,
+                            activeShadow: t,
+                            boxShadow: t,
+                            errorActiveShadow: t,
+                            warningActiveShadow: t,
+                            
+                        },
+                    },
                 }}
             >
                 <div className={styles.main}>
@@ -72,7 +87,7 @@ export default class Timetable extends Cp<Props>{
                                     currentWeek={this.props.data.state.currentWeek}
                                 />
                                 <tr>
-                                    <td>55:55 - 53:55</td>
+                                    <td><TimePicker.RangePicker format={"H:mm"} /></td>
                                 </tr>
                             </tbody>
                         </table>
