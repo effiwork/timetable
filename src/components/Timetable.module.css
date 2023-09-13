@@ -2,10 +2,10 @@
     container-type: size;
 }
 .timeline{
-    width: 9rem;
+    width: 10rem;
 }
 @container (max-width: 30rem){
     .timeline{
-        width: 7rem;
+        width: 8.1rem;
     }
 }

@@ -1,5 +1,5 @@
 ﻿import { Data } from "../types/data";
-import { getDateAtWeek } from "../dataFlow/processGhostTypes";
+import { getDateAtWeek, getTimeIndex } from "../dataFlow/processGhostTypes";
 import meta from "./meta";
 
 export default function generateData() :Data{
@@ -18,10 +18,32 @@ export default function generateData() :Data{
             currentWeek: 1,
         },
         lessons: [
-            [], [], [], [], [], [], []
+            [
+                {
+                    name: "fogjivhrehf",
+                    time: [getTimeIndex(0), getTimeIndex(1)]
+                },
+                {
+                    name: "evrbthyuio",
+                    time: [getTimeIndex(2)]
+                }
+            ], [], [], [], [], [], []
         ],
         lessonTemplates: {
-            morning: [],
+            morning: [
+                {
+                    startTime: [7, 15],
+                    endTime: [8, 0]
+                },
+                {
+                    startTime: [8, 10],
+                    endTime: [8, 55]
+                },
+                {
+                    startTime: [9, 10],
+                    endTime: [9, 40]
+                }
+            ],
             afternoon: [],
             night: []
         }

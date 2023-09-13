@@ -6,26 +6,31 @@ import { colorInstance } from "./color";
 
 export type LessonsInADay = Lesson[];
 
+
+//fixme:mock阶段的optional都要去掉！
 export interface Lesson{
     //#region 仅用户相关属性
         name :string;
-        teachers :string;
-        description :string;
-        location :string;
-        location_desc :LessonLocation;
-        subject :LessonSubject;
-        importance :LessonImportance;
+        teachers? :string;
+        description? :string;
+        location? :string;
+        location_desc? :LessonLocation;
+        subject? :LessonSubject;
+        importance? :LessonImportance;
     //#endregion
     //#region 用户与程序共用属性
-        /**上课时间*/
+        /**上课时间
+         * 
+         * 从0开始！！是Index！
+        */
         time :TimeIndex[];
         /**记录需要上课的周数。
          * 
          * **这个数组的长度与 `Data.config.weeksInTerm` 一样。***/
-        weeks :boolean[];
+        weeks? :boolean[];
         /**显示颜色，包含文字颜色和背景颜色，背景可以是一个渐变，详情见 `color.d.ts`
          * 
          * 不上的课程为灰色，无法更改*/
-        color :colorInstance;
+        color? :colorInstance;
     //#endregion
 }

@@ -29,6 +29,12 @@ export default class Timetable extends Cp<Props>{
             draft.state.currentWeek = week;
         }));
     }
+    patchTimepickerText = ()=>{
+        const timepickers = document.querySelectorAll("[placeholder=开始时间], [placeholder=结束时间]") as unknown as HTMLInputElement[];
+        for(let i = 0; i < timepickers.length; i++) timepickers[i].placeholder = timepickers[i].placeholder.substring(0, 2);
+    }
+    componentDidMount = this.patchTimepickerText;
+    componentDidUpdate = this.patchTimepickerText;
     render() :React.ReactNode{
         const t = "transparent";
         return(
@@ -41,23 +47,7 @@ export default class Timetable extends Cp<Props>{
                         colorBgContainer: "var(--c-grey--4)",
                         colorBorder: "var(--c-main)"
                     },
-                    algorithm: theme.darkAlgorithm,
-                    components: {
-                        DatePicker: {
-                            paddingLG: 0,
-                            paddingMD: 0,
-                            paddingSM: 0,
-                            borderRadius: 0,
-                            colorBorder: t,
-                            hoverBorderColor: t,
-                            activeBorderColor: t,
-                            activeShadow: t,
-                            boxShadow: t,
-                            errorActiveShadow: t,
-                            warningActiveShadow: t,
-                            
-                        },
-                    },
+                    algorithm: theme.darkAlgorithm
                 }}
             >
                 <div className={styles.main}>
@@ -86,9 +76,27 @@ export default class Timetable extends Cp<Props>{
                                     config={this.props.data.config}
                                     currentWeek={this.props.data.state.currentWeek}
                                 />
-                                <tr>
-                                    <td><TimePicker.RangePicker format={"H:mm"} /></td>
-                                </tr>
+                                <ConfigProvider theme={{
+                                    components: {
+                                        DatePicker: {
+                                            paddingLG: 0,
+                                            paddingMD: 0,
+                                            paddingSM: 0,
+                                            borderRadius: 0,
+                                            colorBorder: t,
+                                            hoverBorderColor: t,
+                                            activeBorderColor: t,
+                                            activeShadow: t,
+                                            boxShadow: t,
+                                            errorActiveShadow: t,
+                                            warningActiveShadow: t,
+                                        }
+                                    }
+                                }}>
+                                    <tr>
+                                        <td><TimePicker.RangePicker format={"H:mm"} separator={"-"} /></td>
+                                    </tr>
+                                </ConfigProvider>
                             </tbody>
                         </table>
                     </div>
