@@ -1,6 +1,4 @@
-﻿import { DateAtDay, DateAtWeek } from "../types/time";
-
-export function getcolorString(input :string) :colorString | null{
+﻿export function getcolorString(input :string) :colorString | null{
     if(input.match(/^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{8}|[0-9a-fA-F]{6})$/)) return input as unknown as colorString;
     else return null;
 }

@@ -1,5 +1,4 @@
 ﻿import { LessonsInADay } from "./lesson";
-import { DateAtWeek, TimeBlock } from "./time";
 
 export interface Data{
     config :{

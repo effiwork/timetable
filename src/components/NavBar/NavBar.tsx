@@ -77,8 +77,9 @@ export default class NavBar extends Cp<Props, State>{
 
     render() :React.ReactNode{
         return(<div className={`${mainStyles.noselect} ${styles.container}`}>
-            <div className={`${styles.button}${this.props.currentWeek === 1 ? ` ${styles.disabled}` : ""}`} title="后退一周" onClick={this.props.decrementWeek}>←</div>
+            <div tabIndex={1} className={`${styles.button}${this.props.currentWeek === 1 ? ` ${styles.disabled}` : ""}`} title="后退一周" onClick={this.props.decrementWeek}>←</div>
             <div
+                tabIndex={2}
                 className={styles.weekNav}
                 title="输入周数"
                 onClick={this.clickCB}
@@ -99,7 +100,7 @@ export default class NavBar extends Cp<Props, State>{
                     }}
                 >{this.state.currentWeek}</span>
             周</div>
-            <div className={`${styles.button}${this.props.currentWeek === this.props.maxWeek ? ` ${styles.disabled}` : ""}`} title="前进一周" onClick={this.props.incrementWeek}>→</div>
+            <div tabIndex={3} className={`${styles.button}${this.props.currentWeek === this.props.maxWeek ? ` ${styles.disabled}` : ""}`} title="前进一周" onClick={this.props.incrementWeek}>→</div>
         </div>);
     }
 

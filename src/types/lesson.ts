@@ -1,22 +1,22 @@
 ﻿import { LessonImportance } from "../dataSource/enums";
 import { LessonLocation } from "../dataSource/enums";
 import { LessonSubject } from "../dataSource/enums";
-import { colorInstance } from "./color";
 
 
 export type LessonsInADay = Lesson[];
 
 
-//fixme:mock阶段的optional都要去掉！
+
 export interface Lesson{
     //#region 仅用户相关属性
+        //fixme:除了name之外所有的东西都是可选的，mock结束后记得改回来
         name :string;
-        teachers? :string;
-        description? :string;
-        location? :string;
-        location_desc? :LessonLocation;
-        subject? :LessonSubject;
-        importance? :LessonImportance;
+        teachers :string;
+        description :string;
+        location :string;
+        location_type :LessonLocation;
+        subject :LessonSubject;
+        importance :LessonImportance;
     //#endregion
     //#region 用户与程序共用属性
         /**上课时间

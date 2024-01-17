@@ -1,5 +1,4 @@
 ﻿import styles from "./DayTitle.module.css";
-import { DateAtWeek } from "../../types/time";
 import { Immutable } from "immer";
 import { getDayDescription } from "../../dataSource/enums";
 import { getDate } from "../../utils";

@@ -1,9 +1,10 @@
 ﻿import { Data } from "../types/data";
 import { getDateAtWeek, getTimeIndex } from "../dataFlow/processGhostTypes";
 import meta from "./meta";
+import { LessonImportance, LessonLocation, LessonSubject } from "./enums";
 
 export default function generateData() :Data{
-    return {
+    return{
         config: {
             showWeekend: false,
             startWeek: getDateAtWeek(),
@@ -20,11 +21,25 @@ export default function generateData() :Data{
         lessons: [
             [
                 {
-                    name: "fogjivhrehf",
+                    name: "大学化学1-2",
+                    description: "",
+                    importance: LessonImportance.critical,
+                    location: "一教A711",
+                    location_type: LessonLocation.local,
+                    subject: LessonSubject.engineering,
+                    teachers: "few",
+                    weeks: [],
                     time: [getTimeIndex(0), getTimeIndex(1)]
                 },
                 {
-                    name: "evrbthyuio",
+                    name: "微积分Ⅰ-1",
+                    description: "",
+                    importance: LessonImportance.critical,
+                    location: "一教A711",
+                    location_type: LessonLocation.local,
+                    subject: LessonSubject.engineering,
+                    teachers: "few",
+                    weeks: [],
                     time: [getTimeIndex(2)]
                 }
             ], [], [], [], [], [], []

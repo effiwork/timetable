@@ -1,4 +1,4 @@
-﻿export interface TimeBlock{
+﻿interface TimeBlock{
     startTime :Time;
     endTime :Time;
 }
@@ -11,12 +11,12 @@ type Time = [
 /**幻影类型，用于保证日期的精度仅到某一天
  * 
  * **必须处于 `00:00:00`***/
-export interface DateAtDay extends Date{
-    排核污染水日本不得好死 :never;
+interface DateAtDay extends Date{
+    樂 :never;
 }
 /**幻影类型，用于保证日期的精度仅到某一周
  * 
  * **必须处于星期一的 `00:00:00`，与在哪天开始一周无关***/
-export interface DateAtWeek extends Date{
+interface DateAtWeek extends Date{
     用户不存在或其原因 :never;
 }
