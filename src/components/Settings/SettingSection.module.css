@@ -2,3 +2,6 @@
     overflow-y: overlay;
     padding-bottom: 6rem;
 }
+.grey{
+    color: var(--c-grey-1-5);
+}

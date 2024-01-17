@@ -74,11 +74,11 @@ export default class AboutDialog extends Cp<{}, State>{
                             <div>为了大屏显示和周重复事件而生，当 Notion 提供重复事件后将终止开发和支持（可能得等上几年😂）。</div>
                             <div>这是一份遥远的礼物，送给曾经与我相伴，去往大学的同学们。</div>
                             <hr />
-                            <div><a href="https://github.com/scu-dev/timetable">GitHub 仓库</a>&emsp;<a href="https://github.com/ljm12914">LJM12914 GitHub 主页</a>&emsp;<a href="https://i.ljm.im">LJM12914 个人网站</a></div>
+                            <div><a target="_blank" href="https://github.com/effiwork/timetable">GitHub 仓库</a>&emsp;<a target="_blank" href="https://github.com/ljm12914">LJM12914 GitHub 主页</a>&emsp;<a target="_blank" href="https://i.ljm.im">LJM12914 个人网站</a></div>
                             <hr />
-                            <div className={styles.small}><strong>本软件在 <a href="https://github.com/scu-dev/timetable/blob/main/LICENSE">AGPL-3.0</a> 条款下发行。本软件所有权属于 LJM12914，任何形式的侵权行为必将被追究。</strong>用户输入本软件的数据之一切权利属于用户。</div>
-                            <div className={styles.small}>版权所有 2019-现在 LJM12914。保留所有权利。</div>
-                            <div className={styles.small}>©2019-present LJM12914. All Rights Reserved.</div>
+                            <div className={styles.small}><strong>本软件在 <a target="_blank" href="https://github.com/effiwork/timetable/blob/main/LICENSE">AGPL-3.0</a> 条款下发行。本软件所有权属于 LJM12914，任何形式的侵权行为必将被追究。</strong>用户通过任何方式输入本软件的数据之一切权利属于用户。</div>
+                            <div className={styles.small}>©版权所有 2019-现在 LJM12914。保留所有权利。</div>
+                            <div className={styles.small}>©Copyright 2019-present LJM12914. All Rights Reserved.</div>
                         </div>
                     </Dialog.Content>
                 </Dialog.Portal>

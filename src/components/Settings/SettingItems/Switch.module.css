@@ -27,20 +27,6 @@
     transform: translateX(1.52rem);
     background-color: var(--c-grey-6);
 }
-.wrapperIn{
-    display: flex;
-    flex-flow: column nowrap;
-    gap: .1rem;
-    flex: auto;
-}
-.wrapperOut{
-    display: flex;
-    flex-flow: row nowrap;
-    gap: .25rem;
-}
-.wrapperOut, .wrapperOut *{
-    cursor: pointer;
-}
 .activeWrapper{
     display: flex;
     flex-flow: column nowrap;

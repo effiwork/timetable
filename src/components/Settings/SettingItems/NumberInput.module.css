@@ -1,15 +1,4 @@
-﻿.wrapperIn{
-    display: flex;
-    flex-flow: column nowrap;
-    gap: .1rem;
-    flex: auto;
-}
-.wrapperOut{
-    display: flex;
-    flex-flow: row nowrap;
-    gap: .25rem;
-}
-.activeWrapper{
+﻿.activeWrapper{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;

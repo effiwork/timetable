@@ -13,17 +13,17 @@ type Props = {
 export default function Switch(props :Props){
     const [checked, setChecked] = useState(props.checked);
     return(
-        <div className={`${commonStyles.commonWrapperOut} ${styles.wrapperOut} ${mainStyles.noselect}`}>
-            <label className={styles.wrapperIn} htmlFor={`settings-${props.id}`}>
+        <label htmlFor={`settings-${props.id}`} className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
+            <div className={commonStyles.wrapperIn}>
                 <div className={commonStyles.title}>{props.title}</div>
                 <div className={commonStyles.description}>{props.description}</div>
-            </label>
+            </div>
             <div className={styles.activeWrapper}>
                 <Šẇìťčḣ.Root className={styles.root} id={`settings-${props.id}`}>
                     <Šẇìťčḣ.Thumb className={styles.thumb} />
                 </Šẇìťčḣ.Root>
                 {/*<Šẇìťčḣ checked={checked} />*/}
             </div>
-        </div>
+        </label>
     );
 }

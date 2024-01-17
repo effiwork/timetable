@@ -11,15 +11,15 @@ type Props = {
 export default class WeekRange extends Cp<Props>{
     render() :React.ReactNode{
         return(
-            <div className={`${commonStyles.commonWrapperOut} ${mainStyles.noselect}`}>
-                <label className={styles.wrapperIn}>
+            <label className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
+                <div className={commonStyles.wrapperIn}>
                     <div className={commonStyles.title}>{this.props.title}</div>
                     <div className={commonStyles.description}>{this.props.description}</div>
-                </label>
+                </div>
                 <div className={styles.activeWrapper}>
                     <DatePicker.RangePicker picker="week" placeholder={["",""]} />
                 </div>
-            </div>
+            </label>
         );
     }
 }

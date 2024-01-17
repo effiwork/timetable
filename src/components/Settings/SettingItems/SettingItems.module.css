@@ -3,11 +3,31 @@
 }
 .description{
     font-size: .8rem;
+    color: var(--c-grey-1-5);
 }
-.commonWrapperOut{
+.wrapperOut{
     padding: .4rem .5rem;
     border-radius: .5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .25rem;
+    justify-content: space-between;
 }
-.commonWrapperOut:hover{
+.wrapperOut:hover{
     background-color: var(--c-grey--2-5);
+}
+.wrapperIn{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .1rem;
+    flex: auto;
+}
+.wrapperOut, .wrapperIn{
+    cursor: pointer;
+}
+@media screen and (max-width: 550px){
+    .wrapperOut{
+        flex-wrap: wrap;
+    }
 }

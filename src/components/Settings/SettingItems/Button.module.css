@@ -12,16 +12,12 @@
     transition: background-color .05s ease;
     background-color: var(--c-grey--2-75);
 }
-.wrapperIn{
-    display: flex;
-    flex-flow: column nowrap;
-    gap: .1rem;
-    flex: auto;
+.button:disabled{
+    cursor: not-allowed;
+    background-color: var(--c-grey--2-75);
 }
-.wrapperOut{
-    display: flex;
-    flex-flow: row nowrap;
-    gap: .25rem;
+.button:disabled:hover{
+    background-color: var(--c-grey--2-75);
 }
 .activeWrapper{
     display: flex;

@@ -8,19 +8,20 @@ type Props = {
     description: string;
     title: string;
     addonAfter? :string;
+    min? :number;
 };
 export default class NumberInput extends Cp<Props>{
     render() :React.ReactNode{
         return(
-            <div className={`${commonStyles.commonWrapperOut} ${styles.wrapperOut} ${mainStyles.noselect}`}>
-                <label className={styles.wrapperIn}>
+            <label className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
+                <div className={commonStyles.wrapperIn}>
                     <div className={commonStyles.title}>{this.props.title}</div>
                     <div className={commonStyles.description}>{this.props.description}</div>
-                </label>
-                <div className={styles.activeWrapper}>
-                    <InputNumber min={0} size="middle" addonAfter={this.props.addonAfter} />
                 </div>
-            </div>
+                <div className={styles.activeWrapper}>
+                    <InputNumber min={this.props.min || 0} size="middle" addonAfter={this.props.addonAfter} />
+                </div>
+            </label>
         );
     }
 }
