@@ -1,27 +1,27 @@
-﻿import React, { Component as Cp } from "react";
+﻿import React, { Component as Cp, useState } from "react";
 import commonStyles from "./SettingItems.module.css";
 import styles from "./NumberInput.module.css";
 import mainStyles from "../../../css/main.module.css";
 import { InputNumber } from "antd";
 
 type Props = {
-    description: string;
-    title: string;
+    description :React.ReactNode;
+    title :string;
     addonAfter? :string;
     min? :number;
+    data :number;
 };
-export default class NumberInput extends Cp<Props>{
-    render() :React.ReactNode{
-        return(
-            <label className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
-                <div className={commonStyles.wrapperIn}>
-                    <div className={commonStyles.title}>{this.props.title}</div>
-                    <div className={commonStyles.description}>{this.props.description}</div>
-                </div>
-                <div className={styles.activeWrapper}>
-                    <InputNumber min={this.props.min || 0} size="middle" addonAfter={this.props.addonAfter} />
-                </div>
-            </label>
-        );
-    }
+export default function NumberInput(props :Props){
+    const [number, setNumber] = useState(props.data);
+    return(
+        <label className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
+            <div className={commonStyles.wrapperIn}>
+                <div className={commonStyles.title}>{props.title}</div>
+                <div className={commonStyles.description}>{props.description}</div>
+            </div>
+            <div className={styles.activeWrapper}>
+                <InputNumber min={props.min || 0} size="middle" addonAfter={props.addonAfter} />
+            </div>
+        </label>
+    );
 }

@@ -4,11 +4,12 @@ import styles from "./SettingDialog.module.css";
 import mainStyles from "../../css/main.module.css";
 import { GearIcon, Cross2Icon } from "@radix-ui/react-icons";
 import * as Dialog from "@radix-ui/react-dialog";
-import SettingSection, { SettingData } from "../Settings/SettingSection";
+import SettingSection from "../Settings/SettingSection";
+import { Data } from "../../types/data";
 
 
 /**@once 但鉴于东西太多还是把css放到外面去了*/
-export default class SettingDialog extends Cp<SettingData>{
+export default class SettingDialog extends Cp<Data>{
     render() :React.ReactNode{
         return(
             <Dialog.Root>

@@ -7,9 +7,8 @@ import NumberInput from "./SettingItems/NumberInput";
 import Button from "./SettingItems/Button";
 import meta from "../../dataSource/meta";
 
-export type SettingData = Data["config"];
 /**@once*/
-export default class SettingSection extends Cp<SettingData>{
+export default class SettingSection extends Cp<Data>{
     exportData = ()=>{
         console.log("导出");
     }
@@ -35,17 +34,18 @@ export default class SettingSection extends Cp<SettingData>{
         return(
             <div className={styles.wrapper}>
                 <h5>学期信息</h5>
-                <Button disabled title="从校历获取" description="⛔【未开发】从四川大学教务处校历获取学期信息。必须处于一个学期前的假期或学期中，才能获取正确的学期。" func={this.getCalendarData} />
+                <Button disabled title="从校历获取" description="⛔【未开发】从川大校历获取学期信息。必须处于一个学期前的假期或学期中。" func={this.getCalendarData} />
                 <WeekRange
                     title="开始周与结束周"
                     description="选择学期的开始周与结束周。格式：<年份>-<周数>周"
                 />
                 <NumberInput
+                    data={this.props.config.weeksInTerm}
                     title="…或者输入学期总周数"
                     description="输入后将自动更新结束周，开始周不变"
                 />
                 <h5>课程安排<small className={styles.grey}>请在主界面调整各课程时间。</small></h5>
-                <Button disabled title="从教务系统获取" description="⛔【未开发】ℹ️本软件使用<iframe>容器使您直接登录教务系统，无法获取您的账户信息；并已开源，欢迎审查。//从四川大学“智慧”教务系统获取个人课程信息。必须处于一个学期中才能获取正确的课程信息。" func={this.getLessonData} />
+                <Button disabled title="从教务系统粘贴" description=<>⛔【未开发】从川大“智慧”教务系统获取个人课程信息。必须处于一个学期中。</> func={this.getLessonData} />
                 <NumberInput
                     title="上午课程数"
                     description="从起床到午饭的课程数量，可能的最大值"
@@ -75,13 +75,13 @@ export default class SettingSection extends Cp<SettingData>{
                     id="show-weekend"
                     title="显示周末"
                     description="会使得周程表布局更窄。可怜的周末有课人🥺"
-                    checked={this.props.showWeekend}
+                    checked={this.props.config.showWeekend}
                 />
                 <Switch
                     id="start-at-sunday"
                     title="从周日开始一周"
                     description="适合校历，必须显示周末才会有效。"
-                    checked={this.props.startWeekAtSunday}
+                    checked={this.props.config.startWeekAtSunday}
                 />
                 <NumberInput
                     title="横向布局最小宽度"

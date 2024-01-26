@@ -5,8 +5,8 @@ import mainStyles from "../../../css/main.module.css";
 import { DatePicker } from "antd";
 
 type Props = {
-    description: string;
-    title: string;
+    description :React.ReactNode;
+    title :string;
 };
 export default class WeekRange extends Cp<Props>{
     render() :React.ReactNode{

@@ -6,7 +6,7 @@ import * as Šẇìťčḣ from "@radix-ui/react-switch";
 
 type Props = {
     id :string;
-    description :string;
+    description :React.ReactNode;
     title :string;
     checked :boolean;
 };

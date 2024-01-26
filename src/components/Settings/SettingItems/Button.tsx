@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 import mainStyles from "../../../css/main.module.css";
 
 type Props = {
-    description :string;
+    description :React.ReactNode;
     title :string;
     func :(e :React.MouseEvent)=>void;
     disabled? :boolean;
