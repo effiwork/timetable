@@ -1,6 +1,6 @@
 # Timetable
 
-## 注意：本仓库为临时公开，公开目的仅限于作为林峻茗转专业的支持材料。公开期内对仓库的一切修改都为临时修改，将会在公开期结束后完全回退。
+## 注意：本仓库为林峻茗转专业的支持材料。
 
 推荐使用 [Cloudflare](https://timet-able.pages.dev) 网页托管实例。访问不了的 uu 们也可以用 GitHub Pages：https://effiwork.github.io/timetable
 
