@@ -1,4 +1,7 @@
 # Timetable
+
+## 本项目已经计划合并到 [discushion](https://github.com/effiwork/discushion)，因此已经停止开发。
+
 受够手机上 \* 米课程表的极度狭窄了！😶‍🌫️（PS：还不允许旋转屏幕……）
 
 推荐使用 [Cloudflare](https://timet-able.pages.dev) 网页托管实例。访问不了的 uu 们也可以用 GitHub Pages：https://effiwork.github.io/timetable
