@@ -5,15 +5,18 @@ import { getDateAtWeekByWeekNumber } from "../../utils";
 import DayTitle from "./DayTitle";
 import SettingDialog from "../Dialogs/SettingDialog";
 import AboutDialog from "../Dialogs/AboutDialog";
-import { SettingData } from "../Settings/SettingSection";
+import { Data } from "../../types/data";
+import { Immutable } from "immer";
 
 type Props = {
-    config :SettingData;
-    currentWeek :number;
-};
-type State = {
+    update :(newData :Data)=>void;
+    data :Data;
+}
+
+type State = Immutable<{
     time :Date;
-};
+}>;
+
 /**@once 但鉴于东西太多还是把css放到外面去了*/
 export default class WeekdayBar extends Cp<Props, State>{
     constructor(props :Props){
@@ -36,31 +39,31 @@ export default class WeekdayBar extends Cp<Props, State>{
     }
 
     render() :React.ReactNode{
-        const currentWeek_Date = getDateAtWeekByWeekNumber(this.props.config.startWeek, this.props.currentWeek);
+        const currentWeek_Date = getDateAtWeekByWeekNumber(this.props.data.config.startWeek, this.props.data.state.currentWeek);
         return(
             <tr className={styles.tr}>
                 <th className={`${mainStyles.noselect} ${styles.th}`}>
                     <div className={styles.menu}>
                         <AboutDialog />
-                        <SettingDialog {...this.props.config} />
+                        <SettingDialog data={this.props.data} update={this.props.update} />
                     </div>
                     <div className={styles.time}>{`${this.state.time.getFullYear()}.${this.state.time.getMonth() + 1}.${this.state.time.getDate()} ${this.state.time.getHours()}:${(this.state.time.getMinutes() + "").padStart(2, "0")}`}</div>
                 </th>
                 {
-                    this.props.config.startWeekAtSunday ? <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={0}/> : null
+                    this.props.data.config.startWeekAtSunday ? <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={0}/> : null
                 }
-                <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={1}/>
-                <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={2} />
-                <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={3} />
-                <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={4} />
-                <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={5} />
+                <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={1}/>
+                <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={2} />
+                <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={3} />
+                <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={4} />
+                <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={5} />
                 {
-                    this.props.config.showWeekend ?
-                        this.props.config.startWeekAtSunday ? 
-                            <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={6} />
+                    this.props.data.config.showWeekend ?
+                        this.props.data.config.startWeekAtSunday ? 
+                            <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={6} />
                         : <>
-                            <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={6} />
-                            <DayTitle startAtSunday={this.props.config.startWeekAtSunday} weekendShowed={this.props.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={0} />
+                            <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={6} />
+                            <DayTitle startAtSunday={this.props.data.config.startWeekAtSunday} weekendShowed={this.props.data.config.showWeekend} currentWeek_Date={currentWeek_Date} dayIndex={0} />
                         </>
                     : null
                 }

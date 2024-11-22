@@ -10,6 +10,7 @@ type Props = {
     addonAfter? :string;
     min? :number;
     data :number;
+    onChange :(newValue :number | null)=>void;
 };
 export default function NumberInput(props :Props){
     const [number, setNumber] = useState(props.data);
@@ -20,7 +21,7 @@ export default function NumberInput(props :Props){
                 <div className={commonStyles.description}>{props.description}</div>
             </div>
             <div className={styles.activeWrapper}>
-                <InputNumber min={props.min || 0} size="middle" addonAfter={props.addonAfter} />
+                <InputNumber min={props.min || 0} size="middle" addonAfter={props.addonAfter} value={props.data} onChange={props.onChange} />
             </div>
         </label>
     );

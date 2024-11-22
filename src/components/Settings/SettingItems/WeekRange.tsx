@@ -7,19 +7,20 @@ import { DatePicker } from "antd";
 type Props = {
     description :React.ReactNode;
     title :string;
+    //onChange :(values :RangeValue<dayjs.Dayjs>) => void;
 };
-export default class WeekRange extends Cp<Props>{
-    render() :React.ReactNode{
-        return(
-            <label className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
-                <div className={commonStyles.wrapperIn}>
-                    <div className={commonStyles.title}>{this.props.title}</div>
-                    <div className={commonStyles.description}>{this.props.description}</div>
-                </div>
-                <div className={styles.activeWrapper}>
-                    <DatePicker.RangePicker picker="week" placeholder={["",""]} />
-                </div>
-            </label>
-        );
-    }
+export default function WeekRange(props :Props){
+    return(
+        <label className={`${commonStyles.wrapperOut} ${mainStyles.noselect}`}>
+            <div className={commonStyles.wrapperIn}>
+                <div className={commonStyles.title}>{props.title}</div>
+                <div className={commonStyles.description}>{props.description}</div>
+            </div>
+            <div className={styles.activeWrapper}>
+                <DatePicker.RangePicker picker="week" placeholder={["",""]} onChange={(values, format)=>{
+                    console.log(values, format);
+                }} />
+            </div>
+        </label>
+    );
 }

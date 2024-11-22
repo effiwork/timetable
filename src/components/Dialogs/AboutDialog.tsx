@@ -71,7 +71,7 @@ export default class AboutDialog extends Cp<{}, State>{
                             <div className={styles.author} onDoubleClick={()=>{
                                 alert("🎆🎇🎆");
                             }}>由<img className={styles.authorImg} alt="LJM12914 的图标" src="https://www.ljm.im/avatar/512.png" />LJM12914 为❤️而作</div>
-                            <div>为了大屏显示和周重复事件而生，当 Notion 提供重复事件后将终止开发和支持（可能得等上几年😂）。</div>
+                            <div>为了大屏显示和周重复事件而生，当 Notion 提供完善的重复机制后将终止开发和支持（可能得等上几年😂）。</div>
                             <div>这是一份遥远的礼物，送给曾经与我相伴，去往大学的同学们。</div>
                             <hr />
                             <div><a target="_blank" href="https://github.com/effiwork/timetable">GitHub 仓库</a>&emsp;<a target="_blank" href="https://github.com/ljm12914">LJM12914 GitHub 主页</a>&emsp;<a target="_blank" href="https://i.ljm.im">LJM12914 个人网站</a></div>

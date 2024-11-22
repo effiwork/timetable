@@ -2,15 +2,11 @@
 import { LessonLocation } from "../dataSource/enums";
 import { LessonSubject } from "../dataSource/enums";
 
-
-export type LessonsInADay = Lesson[];
-
-
-
 export interface Lesson{
     //#region 仅用户相关属性
         //fixme:除了name之外所有的东西都是可选的，mock结束后记得改回来
         name :string;
+        //note:老师只需要一个就行，不需要单独追踪每个老师
         teachers :string;
         description :string;
         location :string;
@@ -19,7 +15,7 @@ export interface Lesson{
         importance :LessonImportance;
     //#endregion
     //#region 用户与程序共用属性
-        /**上课时间
+        /**所有的上课时间索引，即一天中第几节课需要上这门课。
          * 
          * 从0开始！！是Index！
         */

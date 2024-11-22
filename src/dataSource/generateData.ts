@@ -1,10 +1,10 @@
 ﻿import { Data } from "../types/data";
-import { getDateAtWeek, getTimeIndex } from "../dataFlow/processGhostTypes";
+import { getDateAtWeek, getTimeIndex } from "./processGhostTypes";
 import meta from "./meta";
 import { LessonImportance, LessonLocation, LessonSubject } from "./enums";
 
-export default function generateData() :Data{
-    return{
+export default function generateData(mook? :boolean) :Data{
+    if(mook) return{
         config: {
             showWeekend: false,
             startWeek: getDateAtWeek(),
@@ -16,7 +16,7 @@ export default function generateData() :Data{
             version: meta.version
         },
         state: {
-            currentWeek: 1,
+            currentWeek: 1
         },
         lessons: [
             [
@@ -44,8 +44,8 @@ export default function generateData() :Data{
                 }
             ], [], [], [], [], [], []
         ],
-        lessonTemplates: {
-            morning: [
+        lessonTemplates: [
+            [
                 {
                     startTime: [7, 15],
                     endTime: [8, 0]
@@ -58,9 +58,24 @@ export default function generateData() :Data{
                     startTime: [9, 10],
                     endTime: [9, 40]
                 }
-            ],
-            afternoon: [],
-            night: []
-        }
+            ], [], []
+        ]
+    };
+    else return{
+        config: {
+            showWeekend: false,
+            startWeek: getDateAtWeek(),
+            weeksInTerm: 20,
+            startWeekAtSunday: false,
+            locked: false,
+            minWidth: 0,
+            showOtherWeeks: false,
+            version: meta.version
+        },
+        state: {
+            currentWeek: 1
+        },
+        lessons: [[], [], [], [], [], [], []],
+        lessonTemplates: [[], [], []]
     };
 }

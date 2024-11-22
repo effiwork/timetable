@@ -1,4 +1,4 @@
-﻿import { LessonsInADay } from "./lesson";
+﻿import { Lesson } from "./lesson";
 
 export interface Data{
     config :{
@@ -14,10 +14,6 @@ export interface Data{
     state :{
         currentWeek :number;
     };
-    lessonTemplates :{
-        morning :TimeBlock[];
-        afternoon :TimeBlock[];
-        night :TimeBlock[];
-    };
-    lessons :[LessonsInADay, LessonsInADay, LessonsInADay, LessonsInADay, LessonsInADay, LessonsInADay, LessonsInADay];
+    lessonTemplates :[TimeBlock[], TimeBlock[], TimeBlock[]];
+    lessons :[Lesson[], Lesson[], Lesson[], Lesson[], Lesson[], Lesson[], Lesson[]];
 }

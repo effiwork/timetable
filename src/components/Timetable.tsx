@@ -2,39 +2,39 @@
 import styles from "./Timetable.module.css";
 import { Data } from "../types/data";
 import NavBar from "./NavBar/NavBar";
-import { updateData } from "../dataFlow/getData";
-import { produce } from "immer";
 import WeekdayBar from "./WeekdayBar/WeekdayBar";
-import { ConfigProvider, TimePicker, theme } from 'antd';
-import zhCN from 'antd/locale/zh_CN';
+import { ConfigProvider, TimePicker, theme } from "antd";
+import zhCN from "antd/locale/zh_CN";
 import "dayjs/locale/zh-cn";
+import localforage from "localforage";
 
-type Props = {
-    data :Data;
-};
 /**@once*/
-export default class Timetable extends Cp<Props>{
-    private incrementWeek = ()=>{
-        updateData(produce(this.props.data, draft=>{
-            if(draft.state.currentWeek < draft.config.weeksInTerm) draft.state.currentWeek++;
-        }));
+export default class Timetable extends Cp<Data, Data>{
+
+    constructor(props :Data){
+        super(props);
+        this.state = props;
     }
-    private decrementWeek = ()=>{
-        updateData(produce(this.props.data, draft=>{
-            if(draft.state.currentWeek > 1) draft.state.currentWeek--;
-        }));
+
+    //更新状态并保存
+    update = async (newData :Data)=>{
+        this.setState(newData, ()=>{
+            localforage.setItem("data", this.state);
+        });
     }
-    private setWeek = (week :number)=>{
-        updateData(produce(this.props.data, draft=>{
-            draft.state.currentWeek = week;
-        }));
+
+//#region 生命周期钩子
+    componentDidMount(){
+
     }
-    patchTimepickerText = ()=>{
-        const timepickers = document.querySelectorAll("[placeholder=开始时间], [placeholder=结束时间]") as unknown as HTMLInputElement[];
-        for(let i = 0; i < timepickers.length; i++) timepickers[i].placeholder = timepickers[i].placeholder.substring(0, 2);
+    componentDidUpdate(){
+        
     }
-    componentDidMount = this.patchTimepickerText;
-    componentDidUpdate = this.patchTimepickerText;
+    componentWillUnmount(){
+
+    }
+//#endregion
+
     render() :React.ReactNode{
         const t = "transparent";
         return(
@@ -52,11 +52,11 @@ export default class Timetable extends Cp<Props>{
             >
                 <div className={styles.main}>
                     <NavBar
-                        maxWeek={this.props.data.config.weeksInTerm}
-                        currentWeek={this.props.data.state.currentWeek}
-                        incrementWeek={this.incrementWeek}
-                        decrementWeek={this.decrementWeek}
-                        setWeek={this.setWeek}
+                        currentWeek={this.state.state.currentWeek}
+                        weeksInTerm={this.state.config.weeksInTerm}
+                        updateCurrentWeek={(newValue :number)=>{
+                            this.setState({state: {currentWeek: newValue}});
+                        }}
                     />
                     <div style={{
                         overflowY: "auto",
@@ -73,8 +73,8 @@ export default class Timetable extends Cp<Props>{
                             </colgroup>
                             <tbody>
                                 <WeekdayBar
-                                    config={this.props.data.config}
-                                    currentWeek={this.props.data.state.currentWeek}
+                                    data={this.state}
+                                    update={this.update}
                                 />
                                 <ConfigProvider theme={{
                                     components: {
@@ -94,7 +94,7 @@ export default class Timetable extends Cp<Props>{
                                     }
                                 }}>
                                     <tr>
-                                        <td><TimePicker.RangePicker format={"H:mm"} separator={"-"} /></td>
+                                        <td><TimePicker.RangePicker format={"H:mm"} separator={"-"} placeholder={["开始", "结束"]} /></td>
                                     </tr>
                                 </ConfigProvider>
                             </tbody>

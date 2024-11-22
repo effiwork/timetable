@@ -20,3 +20,7 @@ interface DateAtDay extends Date{
 interface DateAtWeek extends Date{
     用户不存在或其原因 :never;
 }
+
+interface TimeIndex extends number{
+    主打的就是一个海纳百川有容乃大 :never;
+}
